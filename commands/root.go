@@ -29,6 +29,7 @@ func Manager() *minidis.Minidis {
 	bot.RegisterCommands(
 		RegisterCommand,
 		ProfileCommand,
+		HelpCommand,
 	)
 
 	return bot

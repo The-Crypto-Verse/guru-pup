@@ -3,7 +3,7 @@ module github.com/The-Crypto-Verse/guru-pup
 go 1.18
 
 require (
-	github.com/TheBoringDude/minidis v0.0.0-20220322122500-62f4bb041fa8
+	github.com/TheBoringDude/minidis v0.0.0-20220323140932-da42cd97f90d
 	github.com/World-of-Cryptopups/eosrpc.go v0.0.2-0.20220323031043-8dae71837407
 	github.com/bwmarrin/discordgo v0.24.1-0.20220307125103-9586f7fb38cd
 	github.com/deta/deta-go v1.0.0

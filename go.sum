@@ -3,6 +3,8 @@ github.com/TheBoringDude/go-urljoin v0.0.1 h1:cn8uWW8IPlvIG5WOla8VKJXD/RGLtPagRK
 github.com/TheBoringDude/go-urljoin v0.0.1/go.mod h1:mR5zwmQT9QukYmBx5VLGEpbOVtfZr8Oh0Nl74QphRLg=
 github.com/TheBoringDude/minidis v0.0.0-20220322122500-62f4bb041fa8 h1:lldQfQ/jluBIhBfBbOEvoKyLGZCQb+7lsnyQwz3sMuw=
 github.com/TheBoringDude/minidis v0.0.0-20220322122500-62f4bb041fa8/go.mod h1:HchrHCd/oDG7rgwTjnTsp6gWjtor44TMZ3iNGw3LzGY=
+github.com/TheBoringDude/minidis v0.0.0-20220323140932-da42cd97f90d h1:Y2tI8b6DyfelPFGAY+MhNYY4la7q1QfqM2tWfmZeGHI=
+github.com/TheBoringDude/minidis v0.0.0-20220323140932-da42cd97f90d/go.mod h1:HchrHCd/oDG7rgwTjnTsp6gWjtor44TMZ3iNGw3LzGY=
 github.com/World-of-Cryptopups/atomicassets-go v0.0.0-20220323071005-29c06dcd3f3a h1:DOOwpuzOc0Od2LP63Y8DdWwNFcPa6apeSAXLx7+ZC6g=
 github.com/World-of-Cryptopups/atomicassets-go v0.0.0-20220323071005-29c06dcd3f3a/go.mod h1:ad0Ljp8iZWgB21t6Pt0pLk3Ume+xHG+9GjTL8MJRn2c=
 github.com/World-of-Cryptopups/atomicassets-go v0.0.0-20220323074558-918cf916152e h1:cavqZVJ3qubdTwucp9r/VEtUvUFoF3be1iswbN5x34k=
