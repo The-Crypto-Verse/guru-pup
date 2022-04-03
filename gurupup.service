@@ -1,0 +1,14 @@
+[Unit]
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+ExecStart=/home/ubuntu/guru-pup/guru-pup
+WorkingDirectory=/home/ubuntu/guru-pup
+User=ubuntu
+Restart=always
+RestartSec=5
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=%n
