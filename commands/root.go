@@ -47,6 +47,7 @@ func Manager() *minidis.Minidis {
 	bot.RegisterCommands(
 		RegisterCommand,
 		ProfileCommand,
+		AssetsCommand,
 		HelpCommand,
 	)
 
