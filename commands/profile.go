@@ -38,7 +38,7 @@ var ProfileCommand = &minidis.SlashCommandProps{
 			return err
 		}
 
-		assets, err := lib.GetAssetStats(currentUser.Wallet)
+		assets, err := lib.CountAssetStats(currentUser.Wallet)
 		if err != nil {
 			_, err := c.Followup("Failed to retrieve your assets stats.")
 			return err
