@@ -8,7 +8,7 @@ import (
 )
 
 var RegisterCommand = &minidis.SlashCommandProps{
-	Command:     "register",
+	Name:        "register",
 	Description: "Register your wallet to the bot.",
 	Options: []*discordgo.ApplicationCommandOption{
 		{

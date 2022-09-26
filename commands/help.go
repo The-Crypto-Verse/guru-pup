@@ -8,7 +8,7 @@ import (
 )
 
 var HelpCommand = &minidis.SlashCommandProps{
-	Command:     "help",
+	Name:        "help",
 	Description: "Show help and more info about Guru Pup",
 	Execute: func(c *minidis.SlashContext) error {
 		embed := &discordgo.MessageEmbed{

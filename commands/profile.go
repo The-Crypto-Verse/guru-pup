@@ -12,7 +12,7 @@ import (
 )
 
 var ProfileCommand = &minidis.SlashCommandProps{
-	Command:     "profile",
+	Name:        "profile",
 	Description: "View your profile",
 	Execute: func(c *minidis.SlashContext) error {
 		c.DeferReply(true)

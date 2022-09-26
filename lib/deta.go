@@ -1,15 +1,13 @@
 package lib
 
 import (
-	"os"
-
 	"github.com/deta/deta-go/deta"
 	"github.com/deta/deta-go/service/base"
 )
 
 // Create a new Deta instance.
 func DetaDB() (*deta.Deta, error) {
-	d, err := deta.New(deta.WithProjectKey(os.Getenv("DETA_PROJECT_KEY")))
+	d, err := deta.New(deta.WithProjectKey(DETA_PROJECT_KEY))
 	if err != nil {
 		return nil, err
 	}

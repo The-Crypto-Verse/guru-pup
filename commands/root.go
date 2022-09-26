@@ -2,31 +2,25 @@ package commands
 
 import (
 	"log"
-	"os"
-	"strings"
 
-	_ "github.com/joho/godotenv/autoload"
-
+	"github.com/The-Crypto-Verse/guru-pup/lib"
 	"github.com/TheBoringDude/minidis"
 	"github.com/bwmarrin/discordgo"
 )
 
 func Manager() *minidis.Minidis {
-	token := os.Getenv("TOKEN")
-	guilds := strings.Split(os.Getenv("GUILD"), ",")
-
 	// check if token is not empty
-	if token == "" {
+	if lib.TOKEN == "" {
 		log.Fatal("No TOKEN provided!")
 	}
 
-	bot := minidis.New(token)
+	bot := minidis.New(lib.TOKEN)
 
 	// set intents
 	bot.SetIntents(discordgo.IntentsGuilds | discordgo.IntentsGuildMessages)
 
 	// sync only to specific servers
-	bot.SyncToGuilds(guilds...)
+	bot.SyncToGuilds(lib.GUILDS...)
 
 	bot.OnReady(func(s *discordgo.Session, i *discordgo.Ready) {
 		log.Println("Bot is ready!")
