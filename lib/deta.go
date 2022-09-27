@@ -1,6 +1,7 @@
 package lib
 
 import (
+	"github.com/The-Crypto-Verse/guru-pup/types"
 	"github.com/deta/deta-go/deta"
 	"github.com/deta/deta-go/service/base"
 )
@@ -23,4 +24,24 @@ func UsersBase() (*base.Base, error) {
 	}
 
 	return base.New(db, "users")
+}
+
+// gets all of the users in db
+func GetAllUser() ([]types.UserProps, error) {
+	var users []types.UserProps
+
+	usersBase, _ := UsersBase()
+
+	_, err := usersBase.Fetch(
+		&base.FetchInput{
+			Q:     base.Query{},
+			Dest:  &users,
+			Limit: 0,
+		},
+	)
+	if err != nil {
+		return []types.UserProps{}, err
+	}
+
+	return users, nil
 }

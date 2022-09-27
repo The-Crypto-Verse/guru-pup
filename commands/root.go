@@ -4,6 +4,7 @@ import (
 	"log"
 
 	"github.com/The-Crypto-Verse/guru-pup/lib"
+	"github.com/The-Crypto-Verse/guru-pup/worker"
 	"github.com/TheBoringDude/minidis"
 	"github.com/bwmarrin/discordgo"
 )
@@ -23,6 +24,8 @@ func init() {
 
 	Bot.OnReady(func(s *discordgo.Session, i *discordgo.Ready) {
 		log.Println("Bot is ready!")
+
+		go worker.Start(s, lib.GUILDS[0])
 	})
 
 	Bot.OnBeforeStart(func(s *discordgo.Session) {

@@ -6,10 +6,10 @@ import (
 	"github.com/World-of-Cryptopups/atomicassets-go"
 )
 
+var a = atomicassets.New()
+
 // calculates the total assets a user has
 func GetAssetStats(wallet string) (int, error) {
-	a := atomicassets.New()
-
 	q, err := a.GetAccountCollection(wallet, COLLECTION_NAME)
 	if err != nil {
 		return 0, err

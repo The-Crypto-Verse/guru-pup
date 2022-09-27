@@ -43,14 +43,25 @@ var RegisterCommand = &minidis.SlashCommandProps{
 			return err
 		}
 
+		stats, err := lib.GetAssetStats(wallet)
+		if err != nil {
+			return c.Edit("Failed to get wallet stats. Please try again later.")
+		}
+
+		roles := lib.GetRoles(stats)
+		for _, v := range roles {
+			if err = c.Session.GuildMemberRoleAdd(c.GuildId, id, v); err != nil {
+				return c.Edit("Failed to give roles to user. Please report this error to the admins.")
+			}
+		}
+
 		// put data into the db
 		if _, err = base.Put(&types.UserProps{
 			Key:    id,
 			ID:     id,
 			Wallet: wallet,
 		}); err != nil {
-			_, err := c.Followup("I failed to register your wallet. Please try again later.")
-			return err
+			return c.Edit("I failed to register your wallet. Please try again later.")
 		}
 
 		return c.Edit("You have successfully registered your wallet! You can now try the other commands.")
