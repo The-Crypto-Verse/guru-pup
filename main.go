@@ -6,12 +6,11 @@ import (
 	"log"
 
 	"github.com/The-Crypto-Verse/guru-pup/commands"
+	"github.com/TheBoringDude/minidis"
 )
 
 func main() {
-	bot := commands.Manager()
-
-	if err := bot.Run(); err != nil {
+	if err := minidis.Execute(commands.Bot); err != nil {
 		log.Fatal(err)
 	}
 }
