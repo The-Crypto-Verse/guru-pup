@@ -3,6 +3,7 @@ package commands
 import (
 	"log"
 
+	"github.com/The-Crypto-Verse/guru-pup/commands/admin"
 	"github.com/The-Crypto-Verse/guru-pup/lib"
 	"github.com/The-Crypto-Verse/guru-pup/worker"
 	"github.com/TheBoringDude/minidis"
@@ -40,5 +41,5 @@ func init() {
 	})
 
 	// register commands in here
-	Bot.RegisterCommands(HelpCommand, RegisterCommand, ProfileCommand)
+	Bot.RegisterCommands(HelpCommand, RegisterCommand, ProfileCommand, admin.GetWalletsCommand)
 }
