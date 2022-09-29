@@ -1,6 +1,7 @@
 package admin
 
 import (
+	"fmt"
 	"strings"
 
 	"github.com/The-Crypto-Verse/guru-pup/lib"
@@ -30,7 +31,7 @@ var GetWalletsCommand = &minidis.SlashCommandProps{
 			_, err := c.Followup("There was a problem getting the user's permissions.")
 			return err
 		}
-		if perms&discordgo.PermissionAdministrator == 0 {
+		if perms&discordgo.PermissionManageServer == 0 {
 			// not admin
 			return c.Edit("You do not have permission to perform such actions!")
 		}
@@ -54,26 +55,28 @@ var GetWalletsCommand = &minidis.SlashCommandProps{
 				continue
 			}
 
+			userwallet := fmt.Sprintf("%s - %s", member.User.String(), v.Wallet)
+
 			if hasRole(member.Roles, lib.Shrimpy) {
-				shrimpyPups = append(shrimpyPups, v.Wallet)
+				shrimpyPups = append(shrimpyPups, userwallet)
 			}
 			if hasRole(member.Roles, lib.Crabby) {
-				crabbyPups = append(crabbyPups, v.Wallet)
+				crabbyPups = append(crabbyPups, userwallet)
 			}
 			if hasRole(member.Roles, lib.Octo) {
-				octoPups = append(octoPups, v.Wallet)
+				octoPups = append(octoPups, userwallet)
 			}
 			if hasRole(member.Roles, lib.Fish) {
-				fishPups = append(fishPups, v.Wallet)
+				fishPups = append(fishPups, userwallet)
 			}
 			if hasRole(member.Roles, lib.Dolphin) {
-				dolphinPups = append(dolphinPups, v.Wallet)
+				dolphinPups = append(dolphinPups, userwallet)
 			}
 			if hasRole(member.Roles, lib.Shark) {
-				sharkPups = append(sharkPups, v.Wallet)
+				sharkPups = append(sharkPups, userwallet)
 			}
 			if hasRole(member.Roles, lib.Whale) {
-				whalePups = append(whalePups, v.Wallet)
+				whalePups = append(whalePups, userwallet)
 			}
 
 		}
